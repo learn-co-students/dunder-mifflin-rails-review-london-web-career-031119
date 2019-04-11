@@ -1,0 +1,4 @@
+<% @employees.each do |employee| %>
+<%= link_to employee.alias, employee_path(employee) %>
+<br>
+<% end %>
