@@ -1,0 +1,36 @@
+<h1>Employee Edit Form</h1>
+
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |error| %>
+    <li>Error: <%= error %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for(@employee) do |f| %>
+
+<label>First Name:</label><br>
+<%= f.text_field :first_name%><br>
+
+<label>Last Name:</label><br>
+<%= f.text_field :last_name%><br>
+
+<label>Alias:</label><br>
+<%= f.text_field :alias%><br>
+
+<label>Job title:</label><br>
+<%= f.text_field :title%><br>
+
+<label>Office:</label><br>
+<%= f.text_field :office%><br>
+
+<label>Profile Image:</label><br>
+<%= f.text_area :img_url%><br>
+
+<%= f.label 'Dog:' %>
+<%= f.collection_select :dog_id, @dogs,:id, :name%>
+
+<%= f.submit %>
+<% end %>
+
